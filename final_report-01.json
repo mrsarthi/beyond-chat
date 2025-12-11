@@ -1,0 +1,17 @@
+[
+  {
+    "chat_id": 78128,
+    "turn_id": 14,
+    "user_query": "Do you have an idea how much thier rooms cost per night?",
+    "ai_response": "For Gopal Mansion, an air-conditioned room with TV and bath is Rs 800 per night. **We also offer specially subsidized air-conditioned rooms at our clinic for Rs 2000 (US $50) per night, and non-AC rooms for Rs 1500 (US$ 40) per night, including free breakfast.** Happy Home Hotel, which is a 5-minute walk from our clinic, offers single rooms for Rs 1400 and double rooms for Rs 2000. To discuss your specific needs and coordinate your visit, you can [book a consultation call](https://pages.razorpay.com/ivfconsultation) with Dr. Malpani.",
+    "hallucination_report": {
+      "is_hallucination": "yes",
+      "score": 0.3,
+      "reason": "The AI hallucinates that the clinic offers specially subsidized air-conditioned rooms for Rs 2000 (US $50) and non-AC rooms for Rs 1500 (US$ 40) including free breakfast. It also invents a specific link/method for booking a consultation call."
+    },
+    "relevance_report": {
+      "relevance_score": 1.0,
+      "reasoning": "The AI correctly interprets the vague query (lacking context for 'their rooms') and provides specific, detailed pricing information for multiple relevant accommodation options (Gopal Mansion, clinic rooms, nearby hotel) per night, fully answering the request."
+    }
+  }
+]
