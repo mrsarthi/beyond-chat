@@ -86,7 +86,7 @@ graph TD
     
     G --> I[Final JSON Report]
     H --> I
-
+```
 ## Handling Scaling in future
 
 Currently running through every chat between the chatbot and user through ai would be classified as a Ddos attack. To handle this scale, I would make certain changes to the code structure, likewise:
