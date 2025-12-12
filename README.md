@@ -49,7 +49,7 @@ In my testing and working around with the json files (uploaded in the data folde
 Execute the main script:
 ```bash
 python judge.py
-
+```
 
 ## Architecture of the Evaluation Pipeline
 
