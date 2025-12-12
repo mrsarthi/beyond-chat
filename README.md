@@ -79,7 +79,7 @@ graph TD
     C -->|Match Found| D[Reconstructed Session]
     D --> E[Context Builder]
     
-    E --> F[LLM Judge (Gemini 1.5 Flash)]
+    E --> F["LLM Judge (Gemini 1.5 Flash)"]
     
     F -->|Prompt: Truthfulness| G[Hallucination Score]
     F -->|Prompt: Helpfulness| H[Relevance Score]
@@ -91,11 +91,11 @@ graph TD
 
 Currently running through every chat between the chatbot and user through ai would be classified as a Ddos attack. To handle this scale, I would make certain changes to the code structure, likewise:
 
-1. Changing the request rate:
+1. ### Changing the request rate:
 The current script utilizes Python's asyncio library, so instead of processing conversations sequentially (i.e. one at a time), the system would fire API requests in parallel. This will reduce the total processing time from hours to minutes, limited only by the API rate limits set by the organisation.
-2. Sampling strategy:
+2. ### Sampling strategy:
 Instead of using all the 1 million converstaion, I would implement a sampling strategy to make sure the high risk topic (for eg. pricing, medical information etc.) are the ones that are being trageted frequently
-3. Decoupled Architecture:
+3. ### Decoupled Architecture:
 In a live system with millions of users, running a complex evaluation script instantly for every message would make the chatbot slow and laggy for the user. To fix this, I propose a **Decoupled Architecture**:
 
 * **The "Waiting Room" Concept:** Instead of grading the AI immediately, the Chatbot simply pushes the log into a **Message Queue** (like Kafka or RabbitMQ) and instantly responds to the user. It does not wait for the evaluation.
