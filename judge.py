@@ -123,8 +123,8 @@ def find_matching_turn(vector_data, chat_files):
 def main():
     print("--- Starting Evaluation Pipeline ---")
     
-    chat_files = [load_file(f) for f in glob.glob("data/sample-chat-conversation-02.json")]
-    vector_files = [load_file(f) for f in glob.glob("data/sample_context_vectors-02.json")]
+    chat_files = [load_file(f) for f in glob.glob("data/*chat*.json")]
+    vector_files = [load_file(f) for f in glob.glob("data/*context*.json")]
     
     print(f"Found {len(chat_files)} chat logs and {len(vector_files)} vector logs.")
     
