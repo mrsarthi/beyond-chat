@@ -50,6 +50,10 @@ Execute the main script:
 ```bash
 python judge.py
 ```
+or 
+```bash
+uv run judge.py
+```
 
 ## Architecture of the Evaluation Pipeline
 
