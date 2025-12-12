@@ -87,6 +87,15 @@ graph TD
     G --> I[Final JSON Report]
     H --> I
 ```
+
+## Why this approach?
+### 1. Why Fuzzy Matching instead of a Database Join?
+* **The Problem:** The provided datasets were "siloed"—the Chat logs and Vector logs had no common Primary Key (like a transaction_id).
+* **The Decision:** Instead of asking for better data (which halts progress), we implemented a content-based matching algorithm. This makes the pipeline robust enough to handle "messy" real-world logs immediately without requiring changes to the upstream logging infrastructure.
+
+### 2. Why Strict JSON Enforcement?:
+**The Decision:** LLMs are chatty. If we ask for a grade, they might say "I think it's good." By forcing response_mime_type: "application/json", we ensure the pipeline never breaks due to parsing errors, making the system "production-grade."
+
 ## Handling Scaling in future
 
 Currently running through every chat between the chatbot and user through ai would be classified as a Ddos attack. To handle this scale, I would make certain changes to the code structure, likewise:
